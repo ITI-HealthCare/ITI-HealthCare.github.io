@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Dashboard - Doctor List</title>
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="#/assets_web/images/icons/cea89bb004a4ceb09ff61af3e6ac8d54.png">
+
+        <!-- jquery ui css -->
+        <link href="patientList_files/jquery-ui.css" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap --> 
+        <link href="patientList_files/bootstrap.css" rel="stylesheet" type="text/css">
+                <!-- Font Awesome 4.7.0 -->
+        <link href="patientList_files/font-awesome.css" rel="stylesheet" type="text/css">
+        <!-- semantic css -->
+        <link href="patientList_files/semantic.css" rel="stylesheet" type="text/css"> 
+        <!-- sliderAccess css -->
+        <link href="patientList_files/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+        <!-- slider  -->
+        <link href="patientList_files/select2.css" rel="stylesheet" type="text/css"> 
+        <!-- DataTables CSS -->
+        <link href="patientList_files/dataTables.css" rel="stylesheet" type="text/css"> 
+        <!-- pe-icon-7-stroke -->
+        <link href="patientList_files/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"> 
+        <!-- themify icon css -->
+        <link href="patientList_files/themify-icons.css" rel="stylesheet" type="text/css"> 
+        <!-- Pace css -->
+        <link href="patientList_files/flash.css" rel="stylesheet" type="text/css">
+        <!-- Theme style -->
+        <link href="patientList_files/custom.css" rel="stylesheet" type="text/css">
+        <!-- jstree view -->
+        <link rel="stylesheet" href="patientList_files/style.css">
+                <!-- jQuery  -->
+        <script src="patientList_files/jquery_003.js" type="text/javascript"></script>
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+    <body class="sidebar-mini fixed  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <div class="se-pre-con" style="display: none;"></div>
+
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <header class="main-header"> 
+                                <a href="home.html" class="logo"> <!-- Logo -->
+                    <span class="logo-lg">
+                        <img class="img-fluid" src="./iti-logo3.png" alt="">
+                    </span>
+                </a>
+
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <!-- Sidebar toggle button-->
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="pe-7s-keypad"></span>
+                    </a>
+
+                </nav>
+            </header>
+            <!-- =============================================== -->
+            <!-- Left side column. contains the sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar -->
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 650px;"><div class="sidebar" style="height: 650px; overflow: hidden; width: auto;"> 
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel text-center">
+                                                <div class="image">
+                            <img src="iti-logo.png" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <p>ITI Admin</p>
+                            <a href="#"><i class="fa fa-circle text-success"></i>
+                                                    </a>
+                        </div>
+                    </div>
+
+                    <!-- sidebar menu -->
+    <ul class="sidebar-menu">
+
+    <li class="active">
+        <a href="home.html"> <i class="fa fa ti-home"></i> Dashboard</a>
+    </li> 
+
+
+     
+        <li class="treeview ">
+        <a href="#">
+		 <i class="fa fa-user-md"></i> 
+           <span>Doctor</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addDoctor.html">Add Doctor</a></li>
+            
+                        <li class=""><a href="#">Doctor List</a></li> 
+        </ul>
+    </li>
+     
+
+
+        <li class="treeview ">
+    <a href="#">
+        <i class="fa fa-wheelchair"></i> <span>Patient</span>
+        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+    </a>
+    <ul class="treeview-menu">
+
+                <li class=""><a href="addPatient.html">Add Patient</a></li>
+       
+
+                <li class=""><a href="patientList.html">Patient List</a></li> 
+        
+        </ul>
+    </li> 
+    
+
+    
+
+    
+    <li class="treeview ">
+       <a href="#">
+        <i class="fa fa ti-pencil-alt"></i> <span>Appointment</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+
+                 <li class=""><a href="addAppointment.html">Add Appointment</a></li>
+        
+                 <li class=""><a href="appointmentList.html">Appointment List</a></li> 
+      
+                       
+      </ul>
+    </li> 
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-arrow-circle-right"></i> <span>Pharmacy </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                         
+
+                        <li class=""><a href="addMedicine.html"> Add Medicine</a></li>
+            
+
+                        <li class=""><a href="medicineList.html">Medicine List</a></li>
+            
+        </ul>
+    </li> 
+    
+      
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa ti-book"></i><span>Prescription</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addPrescription.html">Add Prescription</a></li> 
+            
+                        <li class=""><a href="prescriptionList.html">Prescription List</a></li>            
+        </ul>
+    </li>
+    
+    
+
+
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-shield"></i> <span>Insurance </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addInsurance.html">Add Insurance</a></li> 
+            
+
+                        <li class=""><a href="insuranceList.html">Insurance List</a></li>  
+            
+        </ul>
+    </li>
+    
+
+
+    
+    
+
+    
+    
+    
+
+     
+             
+    </ul>
+ </div><div class="slimScrollBar" style="background: rgb(114, 112, 120) none repeat scroll 0% 0%; width: 8px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 345.18px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div></div> <!-- /.sidebar -->
+</aside>
+
+            <!-- =============================================== -->
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper" style="min-height: 660px;">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+
+                    <div class="p-l-30 p-r-30">
+                        <div class="header-icon"><i class="pe-7s-world"></i></div>
+                        <div class="header-title">
+                            <h1>Doctor's</h1>
+                            <small>Doctor List</small> 
+                        </div>
+                    </div>
+                </section>
+                <!-- Main content -->
+                <div class="content"> 
+                    <div id="demoModeEnable"></div>
+                    <!-- alert message -->
+                                        
+                                        
+                                        
+
+                    <!-- content -->
+                    <div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default thumbnail">
+                         <div class="panel-heading no-print">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="btn-group"> 
+                            <a class="btn btn-success" href="#/doctor/create"> <i class="fa fa-plus"></i>  Add Doctor </a>  
+                        </div>
+                    </div>
+                    <form method="post" id="import_csv" enctype="multipart/form-data">
+                        <div class="col-lg-1">
+                            <div class="pull-right"> 
+                                    <input type="file" name="csv_file" id="csv_file" required="" accept=".csv">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <button type="submit" name="import_csv" class="btn btn-info" id="import_csv_btn"><i class="fa fa-upload"></i> Import CSV Data</button>
+                        </div>
+                    </form> 
+                        <div class="col-lg-2">
+                            <a download="" class="btn btn-primary" href="#/assets/data/data.csv"> <i class="fa fa-download"></i>  Sample CSV </a> 
+                        </div>
+                </div>
+            </div> 
+            
+
+                        <div class="panel-body">
+                <!-- Nav tabs --> 
+                <ul class="col-xs-12 nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"> 
+                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab"> <i class="fa fa-list"></i> Doctor List</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#language" aria-controls="language" role="tab" data-toggle="tab"> <i class="fa fa-list"></i> Language</a>
+                    </li>
+                </ul>  
+
+                <!-- Tab panes --> 
+                <div class="col-xs-12 tab-content">
+                    <br>
+                    <!-- INFORMATION -->
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <div class="row">
+                            <div class="col-md-12"> 
+                                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="-1">All</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 75px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-DataTables_Table_0_length-wn-container"><span class="select2-selection__rendered" id="select2-DataTables_Table_0_length-wn-container" title="10"><span class="select2-selection__clear">×</span>10</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> entries</label></div></div><div class="col-sm-4 text-center"><div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_0"><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_0"><span>CSV</span></a><a class="btn btn-default buttons-excel buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_0"><span>Excel</span></a><a class="btn btn-default buttons-pdf buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_0"><span>PDF</span></a><a class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="DataTables_Table_0"><span>Print</span></a></div></div><div class="col-sm-4"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div><table class="datatable table table-striped table-bordered dataTable no-footer dtr-inline collapsed" id="DataTables_Table_0" role="grid" style="width: 100%;" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 15.2px;" aria-sort="ascending" aria-label="SL: activate to sort column descending">SL</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 50.2px;" aria-label="Picture: activate to sort column ascending">Picture</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 55.2px;" aria-label="First Name: activate to sort column ascending">First Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 70.2px;" aria-label="Last Name: activate to sort column ascending">Last Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 85.2px;" aria-label="Department: activate to sort column ascending">Department</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 191.2px;" aria-label="Email Address: activate to sort column ascending">Email Address</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 25.2px;" aria-label="Sex: activate to sort column ascending">Sex</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 43.2px;" aria-label="Blood Group: activate to sort column ascending">Blood Group</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 51.2px;" aria-label="Date of Birth: activate to sort column ascending">Date of Birth</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 45.2px;" aria-label="Action: activate to sort column ascending">Action</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 32.2px;" aria-label="User Role: activate to sort column ascending">User Role</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 51.2px; display: none;" aria-label="Create Date: activate to sort column ascending">Create Date</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 45px; display: none;" aria-label="Status: activate to sort column ascending">Status</th></tr>
+                                    </thead>
+                                   <tbody>
+                                                                        
+                                                                        
+   
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                  
+                                     
+                                  <tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">1</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/e01762432193af48c05f155e313136c2.jpg" alt="" width="65" height="50"></td>
+                                            <td>labonycv</td>
+                                            <td>akhter</td>
+                                            <td>Neurology</td>
+                                            <td>admifghn@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>A-</td>
+                                            <td>2021-12-02</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/141" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/141" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/141" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/141" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-12-09</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">2</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/f1adf06967be60a0c93accb04cb77f88.jpg" alt="" width="65" height="50"></td>
+                                            <td>labonycv</td>
+                                            <td>akhter</td>
+                                            <td>Neurology</td>
+                                            <td>admvcin@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>A-</td>
+                                            <td>2021-12-02</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/140" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/140" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/140" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/140" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-12-09</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">3</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/c3031c7a4f517fdadadb8ae2dd1cff26.jpg" alt="" width="65" height="50"></td>
+                                            <td>labony</td>
+                                            <td>akhter</td>
+                                            <td>Neurology</td>
+                                            <td>admin@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>A-</td>
+                                            <td>2021-12-09</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/138" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/138" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/138" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/138" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-12-09</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">4</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/profile.png" alt="" width="65" height="50"></td>
+                                            <td>Alfin</td>
+                                            <td>Aditiya</td>
+                                            <td>Neurology</td>
+                                            <td>aditiyaalfin95@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>A+</td>
+                                            <td>2021-12-08</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/137" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/137" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/137" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/137" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-12-08</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">5</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/profile.png" alt="" width="65" height="50"></td>
+                                            <td>Mantu</td>
+                                            <td>SIngh</td>
+                                            <td>Neurology</td>
+                                            <td>mantusingh0022@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>A+</td>
+                                            <td>2021-12-08</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/136" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/136" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/136" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/136" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-12-08</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">6</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/profile.png" alt="" width="65" height="50"></td>
+                                            <td>Ali</td>
+                                            <td>Thompson</td>
+                                            <td></td>
+                                            <td>christoperthompson@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>B+</td>
+                                            <td>1966-12-08</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/135" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/135" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/135" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/135" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-12-07</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">7</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/profile.png" alt="" width="65" height="50"></td>
+                                            <td>Anuj</td>
+                                            <td>Kumar</td>
+                                            <td>Neurology</td>
+                                            <td>anuj@gmail.com</td>
+                                            <td>Male</td>
+                                            <td></td>
+                                            <td>1981-11-05</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/133" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/133" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/133" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/133" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-11-16</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">8</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/profile.png" alt="" width="65" height="50"></td>
+                                            <td>yhsj</td>
+                                            <td>ssn</td>
+                                            <td>Laboratory</td>
+                                            <td>ss@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>A-</td>
+                                            <td>1992-11-19</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/132" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/132" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/132" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/132" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-11-12</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">9</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/1fc5122b1af0f6bf54727d0c8567f7c3.jpg" alt="" width="65" height="50"></td>
+                                            <td>Tamim</td>
+                                            <td>Islam</td>
+                                            <td>DENTAL</td>
+                                            <td>tamin.info@gmail.com</td>
+                                            <td>Male</td>
+                                            <td>A+</td>
+                                            <td>1985-12-01</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/131" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/131" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/131" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/131" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-12-07</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">10</td>
+                                            <td><img src="Dashboard%20-%20Doctor%20List_files/84db99223bc18a4e1c43a4c685807a0e.jpg" alt="" width="65" height="50"></td>
+                                            <td>Kumar</td>
+                                            <td>Khan</td>
+                                            <td>DENTAL</td>
+                                            <td>kumar@hospital.com</td>
+                                            <td>Male</td>
+                                            <td>B+</td>
+                                            <td>2021-11-05</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+                                                                                                   <a href="#/doctor/add_language/130" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                                   <a href="#/doctor/profile/130" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                                
+                                                                                                 <a href="#/doctor/edit/130" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete/130" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            <td>Doctor</td> 
+                                            <td style="display: none;">2021-11-10</td>
+                                            <td style="display: none;">Active</td>
+                                        </tr></tbody>
+                                </table><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0">Next</a></li></ul></div></div>  <!-- /.table-responsive -->
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div role="tabpanel" class="tab-pane" id="language">
+                        <div class="row">
+                            <div class="col-sm-12">
+                               <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="DataTables_Table_1_length"><label>Show <select name="DataTables_Table_1_length" aria-controls="DataTables_Table_1" class="form-control input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="-1">All</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 75px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-DataTables_Table_1_length-8j-container"><span class="select2-selection__rendered" id="select2-DataTables_Table_1_length-8j-container" title="10"><span class="select2-selection__clear">×</span>10</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> entries</label></div></div><div class="col-sm-4 text-center"><div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_1"><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_1"><span>CSV</span></a><a class="btn btn-default buttons-excel buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_1"><span>Excel</span></a><a class="btn btn-default buttons-pdf buttons-html5 btn-sm" tabindex="0" aria-controls="DataTables_Table_1"><span>PDF</span></a><a class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="DataTables_Table_1"><span>Print</span></a></div></div><div class="col-sm-4"><div id="DataTables_Table_1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_1"></label></div></div></div><table class="datatable table table-striped table-bordered dataTable no-footer dtr-inline" id="DataTables_Table_1" role="grid" style="width: 100%;" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending" aria-label="SL: activate to sort column descending">SL</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 0px;" aria-label="Language: activate to sort column ascending">Language</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 0px;" aria-label="Doctor Name: activate to sort column ascending">Doctor Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 0px;" aria-label="Designation: activate to sort column ascending">Designation</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 0px;" aria-label="Specialist: activate to sort column ascending">Specialist</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 0px;" aria-label="Mobile No: activate to sort column ascending">Mobile No</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 0px;" aria-label="Action: activate to sort column ascending">Action</th></tr>
+                                    </thead>
+                                   <tbody>
+                                                                        
+                                                                        
+   
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                  
+                                     
+                                  <tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">1</td>
+                                             <td>english</td>
+                                            <td>Sumon  Ahmed</td>
+                                            <td>Professor</td>
+                                            <td>Cardiology</td>
+                                            <td>56456452</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/1" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/1" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">2</td>
+                                             <td>english</td>
+                                            <td>David Taiwo</td>
+                                            <td>Doctor</td>
+                                            <td></td>
+                                            <td>08052456282</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/7" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/7" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">3</td>
+                                             <td>english</td>
+                                            <td>Mustaf Mohamed</td>
+                                            <td>Dr.Lafaha</td>
+                                            <td></td>
+                                            <td>627878878</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/8" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/8" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">4</td>
+                                             <td>english</td>
+                                            <td>Dr.Subrata Kumar Saha</td>
+                                            <td>CMA</td>
+                                            <td></td>
+                                            <td>011112223334</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/10" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/10" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">5</td>
+                                             <td>english</td>
+                                            <td>Arsalan Ahmed</td>
+                                            <td>Assistant</td>
+                                            <td></td>
+                                            <td>03043059157</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/12" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/12" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">6</td>
+                                             <td>english</td>
+                                            <td>Christopher Thompson</td>
+                                            <td>Professor</td>
+                                            <td>Medicine</td>
+                                            <td>123456789</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/13" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/13" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">7</td>
+                                             <td>english</td>
+                                            <td>Christopher Thompson</td>
+                                            <td>Professor</td>
+                                            <td>Medicine</td>
+                                            <td>123456789</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/14" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/14" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">8</td>
+                                             <td>english</td>
+                                            <td>Ajay Patil</td>
+                                            <td>HHH</td>
+                                            <td></td>
+                                            <td>2</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/15" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/15" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeX odd" role="row">
+                                            <td class="sorting_1" tabindex="0">9</td>
+                                             <td>english</td>
+                                            <td>Julio Aquije</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/16" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/16" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr><tr class="gradeC even" role="row">
+                                            <td class="sorting_1" tabindex="0">10</td>
+                                             <td>english</td>
+                                            <td>Kaival Joshi</td>
+                                            <td>MBBS </td>
+                                            <td>Neurology</td>
+                                            <td>7990532704</td>
+                                            <td>
+                                                                                                <div class="action-btn">
+
+                                                                                                 <a href="#/doctor/edit_lang/20" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a> 
+                                               
+                                                                                                 <a href="#/doctor/delete_lang/20" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ?  ')"><i class="fa fa-trash"></i></a>
+                                                                                               
+                                                </div> 
+                                                                                            </td>
+                                            
+                                        </tr></tbody>
+                                </table><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_1_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_1_previous"><a href="#" aria-controls="DataTables_Table_1" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_1" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_1" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_1" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_1" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_1" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button next" id="DataTables_Table_1_next"><a href="#" aria-controls="DataTables_Table_1" data-dt-idx="6" tabindex="0">Next</a></li></ul></div></div>  <!-- /.table-responsive -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#import_csv').on('submit', function(event){
+          event.preventDefault();
+          $.ajax({
+           url:"#/doctor/import",
+           method:"POST",
+           data:new FormData(this),
+           contentType:false,
+           cache:false,
+           processData:false,
+           beforeSend:function(){
+            $('#import_csv_btn').html('Importing...');
+           },
+           success:function(data)
+           {
+            $('#import_csv')[0].reset();
+            $('#import_csv_btn').attr('disabled', false);
+            $('#import_csv_btn').html('Import Done');
+            setInterval(function(){
+                history.go(0);
+            }, 5000);
+           }
+          })
+         });
+    });
+</script>
+
+                </div> <!-- /.content -->
+            </div> <!-- /.content-wrapper -->
+
+             <footer class="main-footer" >
+                        <img class="img-fluid" height="50px" src="./iti-logo2.png" alt="">
+						 </footer>
+        </div> <!-- ./wrapper -->
+ 
+        <!-- jquery-ui js -->
+        <script src="Dashboard%20-%20Doctor%20List_files/jquery-ui.js" type="text/javascript"></script> 
+        <!-- bootstrap js -->
+        <script src="Dashboard%20-%20Doctor%20List_files/bootstrap.js" type="text/javascript"></script>  
+        <!-- pace js -->
+        <script src="Dashboard%20-%20Doctor%20List_files/pace.js" type="text/javascript"></script>  
+        <!-- SlimScroll -->
+        <script src="Dashboard%20-%20Doctor%20List_files/jquery_002.js" type="text/javascript"></script>  
+
+        <!-- bootstrap timepicker -->
+        <script src="Dashboard%20-%20Doctor%20List_files/jquery-ui-sliderAccess.js" type="text/javascript"></script> 
+        <script src="Dashboard%20-%20Doctor%20List_files/jquery-ui-timepicker-addon.js" type="text/javascript"></script> 
+        <!-- select2 js -->
+        <script src="Dashboard%20-%20Doctor%20List_files/select2.js" type="text/javascript"></script>
+
+        <script src="Dashboard%20-%20Doctor%20List_files/sparkline.js" type="text/javascript"></script> 
+        <!-- Counter js -->
+        <script src="Dashboard%20-%20Doctor%20List_files/waypoints.js" type="text/javascript"></script>
+        <script src="Dashboard%20-%20Doctor%20List_files/jquery.js" type="text/javascript"></script>
+
+        <!-- ChartJs JavaScript -->
+        <script src="Dashboard%20-%20Doctor%20List_files/Chart.js" type="text/javascript"></script>
+        
+        <!-- semantic js -->
+        <script src="Dashboard%20-%20Doctor%20List_files/semantic.js" type="text/javascript"></script>
+        <!-- DataTables JavaScript -->
+        <script src="Dashboard%20-%20Doctor%20List_files/dataTables.js"></script>
+        <!-- tinymce texteditor -->
+        <script src="Dashboard%20-%20Doctor%20List_files/tinymce.js" type="text/javascript"></script> 
+        <!-- Table Head Fixer -->
+        <script src="Dashboard%20-%20Doctor%20List_files/tableHeadFixer.js" type="text/javascript"></script> 
+
+        <!-- Admin Script -->
+        <script src="Dashboard%20-%20Doctor%20List_files/frame.js" type="text/javascript"></script> 
+
+        <!-- Custom Theme JavaScript -->
+        <script src="Dashboard%20-%20Doctor%20List_files/custom.js" type="text/javascript"></script>
+        <!-- jstree view -->
+        <script src="Dashboard%20-%20Doctor%20List_files/jstree.js"></script>
+    
+</body></html>

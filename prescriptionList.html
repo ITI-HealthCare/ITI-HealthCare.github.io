@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Dashboard - Prescription List</title>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="./iti-logo.png">
+
+        <!-- jquery ui css -->
+        <link href="Dashboard%20-%20Home_files/jquery-ui.css" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap --> 
+        <link href="Dashboard%20-%20Home_files/bootstrap.css" rel="stylesheet" type="text/css">
+                <!-- Font Awesome 4.7.0 -->
+        <link href="./fonts/css/all.css" rel="stylesheet" type="text/css">
+        <link href="./fonts/css/fontawesome.css" rel="stylesheet" type="text/css">
+        <link href="./fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- semantic css -->
+        <link href="Dashboard%20-%20Home_files/semantic.css" rel="stylesheet" type="text/css"> 
+        <!-- sliderAccess css -->
+        <link href="Dashboard%20-%20Home_files/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+        <!-- slider  -->
+        <link href="Dashboard%20-%20Home_files/select2.css" rel="stylesheet" type="text/css"> 
+        <!-- DataTables CSS -->
+        <link href="Dashboard%20-%20Home_files/dataTables.css" rel="stylesheet" type="text/css"> 
+        <!-- pe-icon-7-stroke -->
+        <link href="./p/files/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"> 
+        <!-- themify icon css -->
+        <link href="./themify-icons/themify-icons.css" rel="stylesheet" type="text/css"> 
+        <!-- Pace css -->
+        <link href="Dashboard%20-%20Home_files/flash.css" rel="stylesheet" type="text/css">
+        <!-- Theme style -->
+        <link href="Dashboard%20-%20Home_files/custom.css" rel="stylesheet" type="text/css">
+        <!-- jstree view -->
+        <link rel="stylesheet" href="Dashboard%20-%20Home_files/style.css">
+                <!-- jQuery  -->
+        <script src="prescriptionList_files/jquery_003.js" type="text/javascript"></script>
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+    <body class="sidebar-mini fixed  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <div class="se-pre-con" style="display: none;"></div>
+
+        <!-- Site wrapper -->
+        <div class="wrapper">
+                       <header class="main-header"> 
+                                <a href="home.html" class="logo"> <!-- Logo -->
+                    <span class="logo-lg">
+                        <img class="img-fluid" src="./iti-logo3.png" alt="">
+                    </span>
+                </a>
+
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <!-- Sidebar toggle button-->
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="pe-7s-keypad"></span>
+                    </a>
+
+                </nav>
+            </header>
+            <!-- =============================================== -->
+            <!-- Left side column. contains the sidebar -->
+ <aside class="main-sidebar">
+                <!-- sidebar -->
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 650px;"><div class="sidebar" style="height: 650px; overflow: hidden; width: auto;"> 
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel text-center">
+                                                <div class="image">
+                            <img src="iti-logo.png" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <p>ITI Admin</p>
+                            <a href="#"><i class="fa fa-circle text-success"></i>
+                                                    </a>
+                        </div>
+                    </div>
+
+                    <!-- sidebar menu -->
+    <ul class="sidebar-menu">
+
+    <li class="active">
+        <a href="home.html"> <i class="fa fa ti-home"></i> Dashboard</a>
+    </li> 
+
+
+     
+        <li class="treeview ">
+        <a href="#">
+		 <i class="fa fa-user-md"></i> 
+           <span>Doctor</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addDoctor.html">Add Doctor</a></li>
+            
+                        <li class=""><a href="doctorList.html">Doctor List</a></li> 
+        </ul>
+    </li>
+     
+
+
+        <li class="treeview ">
+    <a href="#">
+        <i class="fa fa-wheelchair"></i> <span>Patient</span>
+        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+    </a>
+    <ul class="treeview-menu">
+
+                <li class=""><a href="addPatient.html">Add Patient</a></li>
+       
+
+                <li class=""><a href="patientList.html">Patient List</a></li> 
+        
+        </ul>
+    </li> 
+    
+
+    
+
+    
+    <li class="treeview ">
+       <a href="#">
+        <i class="fa fa ti-pencil-alt"></i> <span>Appointment</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+
+                 <li class=""><a href="addAppointment.html">Add Appointment</a></li>
+        
+                 <li class=""><a href="appointmentList.html">Appointment List</a></li> 
+      
+                       
+      </ul>
+    </li> 
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-arrow-circle-right"></i> <span>Pharmacy </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                         
+
+                        <li class=""><a href="addMedicine.html"> Add Medicine</a></li>
+            
+
+                        <li class=""><a href="medicineList.html">Medicine List</a></li>
+            
+        </ul>
+    </li> 
+    
+      
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa ti-book"></i><span>Prescription</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addPrescription.html">Add Prescription</a></li> 
+            
+                        <li class=""><a href="prescriptionList.html">Prescription List</a></li>            
+        </ul>
+    </li>
+    
+    
+
+
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-shield"></i> <span>Insurance </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addInsurance.html">Add Insurance</a></li> 
+            
+
+                        <li class=""><a href="insuranceList.html">Insurance List</a></li>  
+            
+        </ul>
+    </li>
+    
+
+
+    
+    
+
+    
+    
+    
+
+     
+             
+    </ul>
+ </div><div class="slimScrollBar" style="background: rgb(114, 112, 120) none repeat scroll 0% 0%; width: 8px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 345.18px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div></div> <!-- /.sidebar -->
+</aside>
+
+            <!-- =============================================== -->
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper" style="min-height: 660px;">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+
+                    <div class="p-l-30 p-r-30">
+                        <div class="header-icon"><i class="pe-7s-world"></i></div>
+                        <div class="header-title">
+                            <h1>Prescription</h1>
+                            <small>Prescription List</small> 
+                        </div>
+                    </div>
+                </section>
+                <!-- Main content -->
+                <div class="content"> 
+                    <div id="demoModeEnable"></div>
+                    <!-- alert message -->
+                                        
+                                        
+                                        
+
+                    <!-- content -->
+                    <div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default thumbnail">
+            <div class="panel-body">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+
+				<table class="datatable table table-striped table-bordered table-hover dataTable no-footer dtr-inline" id="DataTables_Table_0" role="grid" style="width: 100%;" width="100%">
+                    <thead>
+                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 45.2px;" aria-sort="ascending" aria-label="SL: activate to sort column descending">SL</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 113.2px;" aria-label="Patient ID: activate to sort column ascending">Patient ID</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 172.2px;" aria-label="Appointment ID: activate to sort column ascending">Appointment ID</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 65.2px;" aria-label="Type                            : activate to sort column ascending">Type                            </th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 147.2px;" aria-label="Doctor Name: activate to sort column ascending">Doctor Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 145.2px;" aria-label="Visiting Fees: activate to sort column ascending">Visiting Fees</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 91.2px;" aria-label="Date: activate to sort column ascending">Date</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80px;" aria-label="Action: activate to sort column ascending" width="80">Action</th></tr>
+                    </thead>
+                    <tbody>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                         
+                    <tr role="row" class="odd">
+                                <td class="sorting_1" tabindex="0">1</td>
+                                <td>PI9MGMMA</td>
+                                <td>A0DKYM2A</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>100</td>
+                                <td>14-12-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/117" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="even">
+                                <td class="sorting_1" tabindex="0">2</td>
+                                <td>PH18VRSZ</td>
+                                <td>A82H1HS8</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>133</td>
+                                <td>11-12-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/116" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="odd">
+                                <td class="sorting_1" tabindex="0">3</td>
+                                <td>PE7JM5JW</td>
+                                <td>AY8OJL5Z73</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>0</td>
+                                <td>09-12-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/115" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="even">
+                                <td class="sorting_1" tabindex="0">4</td>
+                                <td>PIU79S9V</td>
+                                <td>AZAPLQBQ</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>0</td>
+                                <td>07-12-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/114" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="odd">
+                                <td class="sorting_1" tabindex="0">5</td>
+                                <td>PD90X3DR</td>
+                                <td>AUHLEVEA</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>0</td>
+                                <td>07-12-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/113" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="even">
+                                <td class="sorting_1" tabindex="0">6</td>
+                                <td>PX5EH1A8</td>
+                                <td>AC3HWHRV73</td>
+                                <td>Old</td>
+                                <td>Jhon Doei</td>
+                                <td>400</td>
+                                <td>06-12-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/112" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="odd">
+                                <td class="sorting_1" tabindex="0">7</td>
+                                <td>PK565MD8</td>
+                                <td>AN1E9FM373</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>0</td>
+                                <td>01-12-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/111" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="even">
+                                <td class="sorting_1" tabindex="0">8</td>
+                                <td>PGY4U2QZ</td>
+                                <td>AEHNAAQ9</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>30</td>
+                                <td>28-11-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/110" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="odd">
+                                <td class="sorting_1" tabindex="0">9</td>
+                                <td>P2Y66V80</td>
+                                <td>A2QF8CDC73</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>200</td>
+                                <td>25-11-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/109" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr><tr role="row" class="even">
+                                <td class="sorting_1" tabindex="0">10</td>
+                                <td>P3DN9NT8</td>
+                                <td>AWFW8BCV73</td>
+                                <td>New</td>
+                                <td>Jhon Doei</td>
+                                <td>300</td>
+                                <td>10-11-2021</td>
+                                                                 <td class="center">
+                                    <a href="#/prescription/prescription/view/108" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                </td>
+                                                            </tr></tbody>
+                </table><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button disabled" id="DataTables_Table_0_ellipsis"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0">…</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0">12</a></li><li class="paginate_button next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="8" tabindex="0">Next</a></li></ul></div></div>  <!-- /.table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div> <!-- /.content -->
+            </div> <!-- /.content-wrapper -->
+
+            <footer class="main-footer">
+                <img class="img-fluid" height="50px" src="./iti-logo2.png" alt=""> </footer>
+        </div> <!-- ./wrapper -->
+ 
+        <!-- jquery-ui js -->
+        <script src="prescriptionList_files/jquery-ui.js" type="text/javascript"></script> 
+        <!-- bootstrap js -->
+        <script src="prescriptionList_files/bootstrap.js" type="text/javascript"></script>  
+        <!-- pace js -->
+        <script src="prescriptionList_files/pace.js" type="text/javascript"></script>  
+        <!-- SlimScroll -->
+        <script src="prescriptionList_files/jquery_002.js" type="text/javascript"></script>  
+
+        <!-- bootstrap timepicker -->
+        <script src="prescriptionList_files/jquery-ui-sliderAccess.js" type="text/javascript"></script> 
+        <script src="prescriptionList_files/jquery-ui-timepicker-addon.js" type="text/javascript"></script> 
+        <!-- select2 js -->
+        <script src="prescriptionList_files/select2.js" type="text/javascript"></script>
+
+        <script src="prescriptionList_files/sparkline.js" type="text/javascript"></script> 
+        <!-- Counter js -->
+        <script src="prescriptionList_files/waypoints.js" type="text/javascript"></script>
+        <script src="prescriptionList_files/jquery.js" type="text/javascript"></script>
+
+        <!-- ChartJs JavaScript -->
+        <script src="prescriptionList_files/Chart.js" type="text/javascript"></script>
+        
+        <!-- semantic js -->
+        <script src="prescriptionList_files/semantic.js" type="text/javascript"></script>
+        <!-- DataTables JavaScript -->
+        <script src="prescriptionList_files/dataTables.js"></script>
+        <!-- tinymce texteditor -->
+        <script src="prescriptionList_files/tinymce.js" type="text/javascript"></script> 
+        <!-- Table Head Fixer -->
+        <script src="prescriptionList_files/tableHeadFixer.js" type="text/javascript"></script> 
+
+        <!-- Admin Script -->
+        <script src="prescriptionList_files/frame.js" type="text/javascript"></script> 
+
+        <!-- Custom Theme JavaScript -->
+        <script src="prescriptionList_files/custom.js" type="text/javascript"></script>
+        <!-- jstree view -->
+        <script src="prescriptionList_files/jstree.js"></script>
+    
+</body></html>

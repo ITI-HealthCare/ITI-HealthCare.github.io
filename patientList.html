@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Dashboard - Patient List</title>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="./iti-logo.png">
+
+        <!-- jquery ui css -->
+        <link href="Dashboard%20-%20Home_files/jquery-ui.css" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap --> 
+        <link href="Dashboard%20-%20Home_files/bootstrap.css" rel="stylesheet" type="text/css">
+                <!-- Font Awesome 4.7.0 -->
+        <link href="./fonts/css/all.css" rel="stylesheet" type="text/css">
+        <link href="./fonts/css/fontawesome.css" rel="stylesheet" type="text/css">
+        <link href="./fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- semantic css -->
+        <link href="Dashboard%20-%20Home_files/semantic.css" rel="stylesheet" type="text/css"> 
+        <!-- sliderAccess css -->
+        <link href="Dashboard%20-%20Home_files/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+        <!-- slider  -->
+        <link href="Dashboard%20-%20Home_files/select2.css" rel="stylesheet" type="text/css"> 
+        <!-- DataTables CSS -->
+        <link href="Dashboard%20-%20Home_files/dataTables.css" rel="stylesheet" type="text/css"> 
+        <!-- pe-icon-7-stroke -->
+        <link href="./p/files/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"> 
+        <!-- themify icon css -->
+        <link href="./themify-icons/themify-icons.css" rel="stylesheet" type="text/css"> 
+        <!-- Pace css -->
+        <link href="Dashboard%20-%20Home_files/flash.css" rel="stylesheet" type="text/css">
+        <!-- Theme style -->
+        <link href="Dashboard%20-%20Home_files/custom.css" rel="stylesheet" type="text/css">
+        <!-- jstree view -->
+        <link rel="stylesheet" href="Dashboard%20-%20Home_files/style.css">
+                <!-- jQuery  -->
+        <script src="Dashboard%20-%20Home_files/jquery_002.js" type="text/javascript"></script>
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+    <body class="sidebar-mini fixed  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <div class="se-pre-con" style="display: none;"></div>
+
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <header class="main-header"> 
+                                <a href="home.html" class="logo"> <!-- Logo -->
+                    <span class="logo-lg">
+                        <img class="img-fluid" src="./iti-logo3.png" alt="">
+                    </span>
+                </a>
+
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <!-- Sidebar toggle button-->
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="pe-7s-keypad"></span>
+                    </a>
+
+                </nav>
+            </header>
+            <!-- =============================================== -->
+            <!-- Left side column. contains the sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar -->
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 650px;"><div class="sidebar" style="height: 650px; overflow: hidden; width: auto;"> 
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel text-center">
+                                                <div class="image">
+                            <img src="iti-logo.png" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <p>ITI Admin</p>
+                            <a href="#"><i class="fa fa-circle text-success"></i>
+                                                    </a>
+                        </div>
+                    </div>
+
+                    <!-- sidebar menu -->
+    <ul class="sidebar-menu">
+
+    <li class="active">
+        <a href="home.html"> <i class="fa fa ti-home"></i> Dashboard</a>
+    </li> 
+
+
+     
+        <li class="treeview ">
+        <a href="#">
+		 <i class="fa fa-user-md"></i> 
+           <span>Doctor</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addDoctor.html">Add Doctor</a></li>
+            
+                        <li class=""><a href="doctorList.html">Doctor List</a></li> 
+        </ul>
+    </li>
+     
+
+
+        <li class="treeview ">
+    <a href="#">
+        <i class="fa fa-wheelchair"></i> <span>Patient</span>
+        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+    </a>
+    <ul class="treeview-menu">
+
+                <li class=""><a href="addPatient.html">Add Patient</a></li>
+       
+
+                <li class=""><a href="patientList.html">Patient List</a></li> 
+        
+        </ul>
+    </li> 
+    
+
+    
+
+    
+    <li class="treeview ">
+       <a href="#">
+        <i class="fa fa ti-pencil-alt"></i> <span>Appointment</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+
+                 <li class=""><a href="addAppointment.html">Add Appointment</a></li>
+        
+                 <li class=""><a href="appointmentList.html">Appointment List</a></li> 
+      
+                       
+      </ul>
+    </li> 
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-arrow-circle-right"></i> <span>Pharmacy </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                         
+
+                        <li class=""><a href="addMedicine.html"> Add Medicine</a></li>
+            
+
+                        <li class=""><a href="medicineList.html">Medicine List</a></li>
+            
+        </ul>
+    </li> 
+    
+      
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa ti-book"></i><span>Prescription</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addPrescription.html">Add Prescription</a></li> 
+            
+                        <li class=""><a href="prescriptionList.html">Prescription List</a></li>            
+        </ul>
+    </li>
+    
+    
+
+
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-shield"></i> <span>Insurance </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="addInsurance.html">Add Insurance</a></li> 
+            
+
+                        <li class=""><a href="insuranceList.html">Insurance List</a></li>  
+            
+        </ul>
+    </li>
+    
+
+
+    
+    
+
+    
+    
+    
+
+     
+             
+    </ul>
+ </div><div class="slimScrollBar" style="background: rgb(114, 112, 120) none repeat scroll 0% 0%; width: 8px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 345.18px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div></div> <!-- /.sidebar -->
+</aside>
+
+            <!-- =============================================== -->
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper" style="min-height: 660px;">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+
+                    <div class="p-l-30 p-r-30">
+                        <div class="header-icon"><i class="pe-7s-world"></i></div>
+                        <div class="header-title">
+                            <h1>Patient</h1>
+                            <small>Patient List</small> 
+                        </div>
+                    </div>
+                </section>
+                <!-- Main content -->
+                <div class="content"> 
+                    <div id="demoModeEnable"></div>
+                    <!-- alert message -->
+                                        
+                                        
+                                        
+
+                    <!-- content -->
+                    <div class="row">
+    <!--  table area -->
+    <div class="col-sm-12">
+        <div class="panel panel-default thumbnail">
+                     <div class="panel-body">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+
+				<table class="datatable table table-striped table-bordered table-hover dataTable no-footer dtr-inline collapsed" id="DataTables_Table_0" role="grid" style="width: 100%;" width="100%">
+                    <thead>
+                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 24.2px;" aria-sort="ascending" aria-label="SL: activate to sort column descending">SL</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 49.2px;" aria-label="ID No.: activate to sort column ascending">ID No.</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 50.2px;" aria-label="Picture: activate to sort column ascending">Picture</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 42.2px;" aria-label="First Name: activate to sort column ascending">First Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 56.2px;" aria-label="Last Name: activate to sort column ascending">Last Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 224.2px;" aria-label="Email Address: activate to sort column ascending">Email Address</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 48.2px;" aria-label="Mobile No: activate to sort column ascending">Mobile No</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 76.2px;" aria-label="Address: activate to sort column ascending">Address</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 26.2px;" aria-label="Sex: activate to sort column ascending">Sex</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 73.2px;" aria-label="Admission: activate to sort column ascending">Admission</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 45.2px;" aria-label="Action: activate to sort column ascending">Action</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Blood Group: activate to sort column ascending">Blood Group</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label="Date of Birth: activate to sort column ascending">Date of Birth</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label="Create Date: activate to sort column ascending">Create Date</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label="Status: activate to sort column ascending">Status</th></tr>
+                    </thead>
+                    <tbody> 
+                              
+               
+                         
+                    <tr class="gradeX odd" role="row">
+                                <td class="sorting_1" tabindex="0">1</td>
+                                <td>PJM5RIVD</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>KEVIN</td>
+                                <td>OWINO</td>
+                                <td>kevinowino869@gmail.com</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href=""><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="ti-book" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Prescription"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs  btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Bill"><i class="fa fa-file"></i></a> 
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td></td>
+                                    <td style="display: none;"></td> 
+                                    <td style="display: none;">2021-12-20</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeC even" role="row">
+                                <td class="sorting_1" tabindex="0">2</td>
+                                <td>PMFISYFI</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>abdullah</td>
+                                <td>saad</td>
+                                <td>aeqab77@gmail.com</td>
+                                <td>+967777151565</td>
+                                <td></td>
+                                <td></td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="ti-book" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Prescription"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs  btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Bill"><i class="fa fa-file"></i></a> 
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td></td>
+                                    <td style="display: none;"></td> 
+                                    <td style="display: none;">2021-12-19</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeX odd" role="row">
+                                <td class="sorting_1" tabindex="0">3</td>
+                                <td>PELRII27</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>Daniel</td>
+                                <td>Gordillo</td>
+                                <td>grgreg@gmail.com</td>
+                                <td>8976574574</td>
+                                <td>fgregwe</td>
+                                <td>Female</td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                    
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td></td>
+                                    <td style="display: none;">2021-12-18</td> 
+                                    <td style="display: none;">2021-12-18</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeC even" role="row">
+                                <td class="sorting_1" tabindex="0">4</td>
+                                <td>PXGM0X7E</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>MD S</td>
+                                <td>IKDER</td>
+                                <td></td>
+                                <td>01717111000</td>
+                                <td></td>
+                                <td>Male</td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs  btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Bill"><i class="fa fa-file"></i></a> 
+                                    
+                                                                            <a class="btn btn-xs btn-info text-white discharged" title="Discharged" data-toggle="modal" data-target="#modal_form" onclick="discharged('PXGM0X7E')"><i class="fa fa-eject"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td>A-</td>
+                                    <td style="display: none;"></td> 
+                                    <td style="display: none;">2021-12-17</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeX odd" role="row">
+                                <td class="sorting_1" tabindex="0">5</td>
+                                <td>PPF20PUQ</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>Dudung</td>
+                                <td>Zain</td>
+                                <td>admin@demo.com</td>
+                                <td>08123456789</td>
+                                <td>Tangerang</td>
+                                <td>Male</td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs  btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Bill"><i class="fa fa-file"></i></a> 
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td>B+</td>
+                                    <td style="display: none;">2021-12-16</td> 
+                                    <td style="display: none;">2021-12-16</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeC even" role="row">
+                                <td class="sorting_1" tabindex="0">6</td>
+                                <td>PGT96L2P</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>randa</td>
+                                <td>yousuf</td>
+                                <td>sadfgg@gh.gh</td>
+                                <td>123456789</td>
+                                <td>xfcgvhj</td>
+                                <td>Female</td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="ti-book" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Prescription"></i></a> 
+                                    
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td></td>
+                                    <td style="display: none;">1982-12-13</td> 
+                                    <td style="display: none;">2021-12-16</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeX odd" role="row">
+                                <td class="sorting_1" tabindex="0">7</td>
+                                <td>PKQCRWL6</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td></td>
+                                <td>12345</td>
+                                <td>sada</td>
+                                <td>Male</td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                    
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td>A+</td>
+                                    <td style="display: none;">2021-12-14</td> 
+                                    <td style="display: none;">2021-12-15</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeC even" role="row">
+                                <td class="sorting_1" tabindex="0">8</td>
+                                <td>PB2RN14Y</td>
+                                <td><img src="patientList_files/1105b5c828f844b144c784b8f8661980.jpg" width="65" height="50"></td>
+                                <td>Marie</td>
+                                <td>Bondo</td>
+                                <td>bondo@gmail.com</td>
+                                <td>0653443434</td>
+                                <td>323, Rue de la forêt </td>
+                                <td>Female</td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                    
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td>B+</td>
+                                    <td style="display: none;">1970-01-01</td> 
+                                    <td style="display: none;">2021-12-15</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeX odd" role="row">
+                                <td class="sorting_1" tabindex="0">9</td>
+                                <td>PI9MGMMA</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>dvd</td>
+                                <td>dfv</td>
+                                <td>dvd1@gmail.com</td>
+                                <td>5304689786</td>
+                                <td></td>
+                                <td></td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                    
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td></td>
+                                    <td style="display: none;"></td> 
+                                    <td style="display: none;">2021-12-14</td>
+                                    <td style="display: none;">Active</td>
+                                </tr><tr class="gradeC even" role="row">
+                                <td class="sorting_1" tabindex="0">10</td>
+                                <td>PU0N8C5Z</td>
+                                <td><img src="patientList_files/profile.png" width="65" height="50"></td>
+                                <td>Samardeep</td>
+                                <td>Singh</td>
+                                <td>samarbai13@gmail.com</td>
+                                <td>08146937721</td>
+                                <td></td>
+                                <td></td>
+                                  
+                                <td>
+                                    <div class="btn-group"> 
+                                        <a href="" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i> Admission</a>
+                                    </div>
+                                </td>
+                                
+                                                                    <td class="center">
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i></a> 
+                                    
+                                                                            <a href="" class="btn btn-xs btn-primary"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit "></i></a> 
+                                                                        
+
+                                        <a href="" class="btn btn-xs btn-warning"><i class="fa fa-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Case Manager"></i></a> 
+                                                                            <a href="" class="btn btn-xs btn-success"><i class="ti-book" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add Prescription"></i></a> 
+                                    
+                                    
+                                    
+                                                                            <a href="" class="btn btn-xs btn-danger" onclick="return confirm('Are You Sure ? ')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a> 
+                                                                    </td>
+                                
+                                    <td></td>
+                                    <td style="display: none;"></td> 
+                                    <td style="display: none;">2021-12-13</td>
+                                    <td style="display: none;">Active</td>
+                                </tr></tbody>
+                </table><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button disabled" id="DataTables_Table_0_ellipsis"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0">…</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0">53</a></li><li class="paginate_button next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="8" tabindex="0">Next</a></li></ul></div></div>  <!-- /.table-responsive -->
+            </div>
+                    </div>
+    </div>
+</div>
+
+ <div class="modal fade" id="modal_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h2 class="modal-title pull-left" id="exampleModalLabel">Discharged</h2>
+              </div>
+              <div class="modal-body form">
+                 <form action="" class="form-horizontal" id="form" method="post" accept-charset="utf-8">
+           
+                    <div class="form-body">
+                      <div class="form-group">
+                        <label class="control-label col-md-3">Patient ID <i class="text-danger">*</i></label>
+                        <div class="col-md-9">
+                          <input name="patient_id" placeholder="Patient ID" class="form-control" type="text" readonly="readonly">
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3">Discharge Date <i class="text-danger">*</i></label>
+                        <div class="col-md-9">
+                          <input name="discharge_date" placeholder="Discharge Date" class="form-control cdatepicker hasDatepicker" type="text" id="dp1640118557354">
+                        </div>
+                      </div>
+
+                      
+                   </div>
+                </form></div>
+                <div class="modal-footer">
+                  <button type="submit" id="btnSave" class="btn btn-primary">Save</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+                              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+<script type="text/javascript">
+     function discharged(id){
+          $('#form')[0].reset();
+          $('[name="patient_id"]').val(id);
+    };
+
+    $(document).ready(function() {
+        //custom date picker
+        $('.cdatepicker').datepicker({
+            minDate:0,
+            dateFormat: "dd-mm-yy"
+        });
+    });
+ </script>
+                </div> <!-- /.content -->
+            </div> <!-- /.content-wrapper -->
+
+            <footer class="main-footer" >
+                        <img class="img-fluid" height="50px" src="./iti-logo2.png" alt="">
+						 </footer>
+         <!-- ./wrapper -->
+ 
+        <!-- jquery-ui js -->
+        <script src="patientList_files/jquery-ui.js" type="text/javascript"></script> 
+        <!-- bootstrap js -->
+        <script src="patientList_files/bootstrap.js" type="text/javascript"></script>  
+        <!-- pace js -->
+        <script src="patientList_files/pace.js" type="text/javascript"></script>  
+        <!-- SlimScroll -->
+        <script src="patientList_files/jquery_002.js" type="text/javascript"></script>  
+
+        <!-- bootstrap timepicker -->
+        <script src="patientList_files/jquery-ui-sliderAccess.js" type="text/javascript"></script> 
+        <script src="patientList_files/jquery-ui-timepicker-addon.js" type="text/javascript"></script> 
+        <!-- select2 js -->
+        <script src="patientList_files/select2.js" type="text/javascript"></script>
+
+        <script src="patientList_files/sparkline.js" type="text/javascript"></script> 
+        <!-- Counter js -->
+        <script src="patientList_files/waypoints.js" type="text/javascript"></script>
+        <script src="patientList_files/jquery.js" type="text/javascript"></script>
+
+        <!-- ChartJs JavaScript -->
+        <script src="patientList_files/Chart.js" type="text/javascript"></script>
+        
+        <!-- semantic js -->
+        <script src="patientList_files/semantic.js" type="text/javascript"></script>
+        <!-- DataTables JavaScript -->
+        <script src="patientList_files/dataTables.js"></script>
+        <!-- tinymce texteditor -->
+        <script src="patientList_files/tinymce.js" type="text/javascript"></script> 
+        <!-- Table Head Fixer -->
+        <script src="patientList_files/tableHeadFixer.js" type="text/javascript"></script> 
+
+        <!-- Admin Script -->
+        <script src="patientList_files/frame.js" type="text/javascript"></script> 
+
+        <!-- Custom Theme JavaScript -->
+        <script src="patientList_files/custom.js" type="text/javascript"></script>
+        <!-- jstree view -->
+        <script src="patientList_files/jstree.js"></script>
+    
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
